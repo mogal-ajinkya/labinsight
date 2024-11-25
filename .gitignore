@@ -1,0 +1,4 @@
+*.txt
+.venv
+node_modules
+.env

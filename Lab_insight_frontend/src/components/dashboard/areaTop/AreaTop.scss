@@ -1,0 +1,304 @@
+// .content-area-top {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-between;
+//   gap: 16px;
+//   flex-wrap: wrap;
+
+//   .area-top-title {
+//     color: var(--text-color-inverted);
+//   }
+
+//   .area-top-l {
+//     display: flex;
+//     align-items: center;
+//     column-gap: 6px;
+//   }
+
+//   .sidebar-open-btn {
+//     display: inline-flex;
+//     align-items: center;
+//     display: none;
+//     margin-bottom: -1px;
+//     color: var(--text-color-inverted);
+
+//     @media (max-width: 768px) {
+//       display: inline-flex;
+//     }
+//   }
+
+//   // react-date-range plugin theme customization
+//   .date-range-wrapper {
+//     display: inline-block;
+//     box-shadow: var(--light-shadow1);
+
+//     .rdrDateDisplay {
+//       margin: 0;
+//       height: 40px;
+//       display: flex;
+//       align-items: center;
+//       border-radius: 5px;
+//       overflow: hidden;
+//     }
+
+//     .rdrDateRangeWrapper {
+//       position: relative;
+//     }
+
+//     .rdrMonthAndYearWrapper {
+//       position: absolute;
+//       top: 100%;
+//       width: 100%;
+//       background-color: var(--light-color);
+//       padding-top: 0;
+//       height: 40px;
+//       z-index: 1;
+//     }
+
+//     .rdrMonth {
+//       padding: 0;
+//       z-index: 1;
+//     }
+
+//     .rdrWeekDays {
+//       position: absolute;
+//       top: calc(100% + 40px);
+//       left: 0;
+//       width: 100%;
+//       background-color: var(--light-color);
+//       height: 32px;
+//       z-index: 1;
+//     }
+
+//     .rdrDays {
+//       position: absolute;
+//       top: calc(100% + 40px + 32px);
+//       left: 0;
+//       width: 100%;
+//       background-color: var(--light-color);
+//       z-index: 1;
+//     }
+
+//     &.hide-date-range {
+//       .rdrMonthAndYearWrapper {
+//         display: none;
+//       }
+//       .rdrMonth {
+//         padding: 0;
+//       }
+//       .rdrWeekDays,
+//       .rdrDays {
+//         display: none;
+//       }
+//     }
+
+//     .rdrDateDisplayWrapper {
+//       background-color: var(--secondary-color);
+//       border-color: var(--secondary-color);
+//       outline: var(--secondary-color);
+
+//       * {
+//         background-color: var(--secondary-color);
+//         border-color: var(--secondary-color);
+//         outline: var(--secondary-color);
+//         box-shadow: none;
+//         color: var(--base-text-color);
+//       }
+//     }
+//   }
+// }
+
+
+
+// .olcards,
+// .olcards * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// .olcards {
+//   list-style: none;
+//   counter-reset: cardCount;
+//   font-family: sans-serif;
+//   display: flex;
+//   flex-direction: column;
+//   --cardsGap: 1rem;
+//   gap: var(--cardsGap);
+//   padding-bottom: var(--cardsGap);
+// }
+// .olcards li {
+//   counter-increment: cardCount;
+//   display: flex;
+//   color: white;
+//   --labelOffset: 1rem;
+//   --arrowClipSize: 1.5rem;
+//   margin-top: var(--labelOffset);
+// }
+
+// .olcards li::before {
+//   content: counter(cardCount, decimal-leading-zero);
+//   background: white;
+//   color: var(--cardColor);
+//   font-size: 2em;
+//   font-weight: 700;
+//   transform: translateY(calc(-1 * var(--labelOffset)));
+//   margin-right: calc(-1 * var(--labelOffset));
+//   z-index: 1;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding-inline: 0.5em;
+// }
+
+// .olcards li .content {
+//   background-color: var(--cardColor);
+//   --inlinePadding: 1em;
+//   --boxPadding: 0.5em;
+//   display: grid;
+//   font-size: 20px;
+//   font-weight: bolder;
+//   padding: var(--boxPadding) calc(var(--inlinePadding) + var(--arrowClipSize))
+//     var(--boxPadding) calc(var(--inlinePadding) + var(--labelOffset));
+//   grid-template-areas:
+//     "icon title"
+//     "icon text";
+//   gap: 0.25em 1em;
+//   clip-path: polygon(
+//     0 0,
+//     calc(100% - var(--arrowClipSize)) 0,
+//     100% 50%,
+//     calc(100% - var(--arrowClipSize)) 100%,
+//     calc(100% - var(--arrowClipSize)) calc(100% + var(--cardsGap)),
+//     0 calc(100% + var(--cardsGap))
+//   );
+//   position: relative;
+// }
+// .olcards li .content::before {
+//   content: "";
+//   position: absolute;
+//   width: var(--labelOffset);
+//   height: var(--labelOffset);
+//   background: var(--cardColor);
+//   left: 0;
+//   bottom: 0;
+//   clip-path: polygon(0 0, 100% 0, 0 100%);
+//   filter: brightness(0.75);
+// }
+// .olcards li .content::after {
+//   content: "";
+//   position: absolute;
+//   height: var(--cardsGap);
+//   width: var(--cardsGap);
+//   background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent 50%);
+//   left: 0;
+//   top: 100%;
+// }
+// .olcards li .icon {
+//   grid-area: icon;
+//   align-self: center;
+//   font-size: 2em;
+// }
+// .olcards li .content .title {
+//   grid-area: title;
+//   font-size: 1.25em;
+//   /* font-weight: 700; */
+// }
+// .olcards li .content .text {
+//   grid-area: text;
+// }
+// .abcde
+// {
+//   background-color: #656599;
+//   border-radius: 20px;
+// }
+// .content-area-top{
+//   padding: 40px;
+// }
+.area-top-l
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.area-top-title
+{
+  color: #ccccec;
+  font-size:2rem;
+  font-weight:1800px;
+}
+.list {
+
+  list-style: none;
+  padding: 0;
+ 
+}
+
+.list-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+  background-color: #5f5f86;
+  border-radius: 10px;
+  margin: 10px;
+  padding-left: 30px;
+
+}
+
+.list-item:hover {
+  background-color:#ceceed ;
+  .content{
+    color:#5f5f86 ;
+  }
+}
+
+.content
+{
+  font-weight: bolder;
+  font-size: large;
+  color:#c4c4f1 ;
+}
+// .list-item:last-child {
+//   border-bottom: none;
+// }
+.listinside
+{
+   display: flex;
+   justify-content: space-between;
+}
+.moreicon{
+  background-color: #8282a8;
+  padding:0 1% 0 1%;
+  border-radius: 10px;
+  transition: transform 0.3s ease; 
+}
+.moreicon:hover{
+  transform: scale(1.1);
+  
+}
+
+.search
+{
+  --padding:14px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: var(--padding);
+  border-radius: 28px;
+  background: #f6f6f6;
+  // width: 600px;
+}
+
+.searchip
+{
+  font-size: 16px;
+  font-family: 'Lexend', sans-serif;
+  color: #333333;
+  margin-left: var(--padding);
+  outline: none;
+  border: none;
+  background: transparent; 
+  width: 280px;
+}
